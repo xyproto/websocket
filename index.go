@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+package main
+
+const index_html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Chat Example</title>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript">
     $(function() {
 
@@ -90,3 +92,4 @@ body {
 </form>
 </body>
 </html>
+`

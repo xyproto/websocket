@@ -7,8 +7,10 @@ import (
 	"text/template"
 )
 
-var addr = flag.String("addr", ":8080", "http service address")
-var indexTempl = template.Must(template.ParseFiles("index.html"))
+var addr = flag.String("addr", ":4000", "http service address")
+
+//var indexTempl = template.Must(template.ParseFiles("index.html"))
+var indexTempl, _ = template.New("index.html").Parse(index_html)
 
 func serveHome(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
@@ -28,6 +30,7 @@ func main() {
 	go h.run()
 	http.HandleFunc("/", serveHome)
 	http.HandleFunc("/ws", serveWs)
+	log.Println("Listening to ", *addr)
 	err := http.ListenAndServe(*addr, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)

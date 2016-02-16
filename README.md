@@ -13,8 +13,9 @@ development environment.
 Once you have Go up and running, you can download, build and run the example
 using the following commands.
 
-    $ go get github.com/gorilla/websocket
-    $ cd `go list -f '{{.Dir}}' github.com/gorilla/websocket/examples/chat`
-    $ go run *.go
+    $ go get github.com/xyproto/wschat
+    $ wschat
+
+This is provided that `$GOPATH/bin` is in the `$PATH`.
 
 To use the chat example, open http://localhost:4000/ in your browser.
